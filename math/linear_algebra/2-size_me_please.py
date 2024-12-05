@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 
 def matrix_shape(matrix):
+    """
+    Calculate the shape of a matrix.
+
+    Args:
+        matrix (list): A list of lists representing the matrix.
+
+    Returns:
+        list: A list of integers representing the shape of the matrix.
+    """
     # Handle edge case for empty matrix
     if not matrix:
         return []
@@ -9,8 +18,8 @@ def matrix_shape(matrix):
     shape = []
 
     # Iterate though each level to calculate shape
-    while isinstance(matrix, list): # The current matrix is a list
-        shape.append(len(matrix))   # The lenght of the current level
+    while isinstance(matrix, list):  # The current matrix is a list
+        shape.append(len(matrix))    # The lenght of the current level
         matrix = matrix[0]
 
     return shape
