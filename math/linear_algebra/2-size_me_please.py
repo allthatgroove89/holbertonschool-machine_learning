@@ -2,6 +2,8 @@
 """
 This module contains a function to calculate the shape of a matrix.
 """
+
+
 def matrix_shape(matrix):
     """
     Calculate the shape of a matrix.
