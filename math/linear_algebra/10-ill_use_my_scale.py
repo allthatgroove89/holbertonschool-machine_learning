@@ -4,9 +4,6 @@ This module contains a function to calculate the shape of a NumPy matrix.
 """
 
 
-import numpy as np
-
-
 # Using shape attribute to calculate shape of matrices
 def np_shape(matrix):
     """
