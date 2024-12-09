@@ -4,6 +4,9 @@ This module provides a function to transpose a 2D matrix.
 """
 
 
+import numpy as np
+
+
 def np_transpose(matrix):
     """
     Transposes a matrix.
