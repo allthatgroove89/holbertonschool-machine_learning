@@ -24,8 +24,8 @@ def scatter():
 
     # Adding title and labels
     plt.title("Men's Height vs Weight")
-    plt.xlabel('Height(in)')
-    plt.ylabel('Weight(lbs)')
+    plt.xlabel('Height (in)')
+    plt.ylabel('Weight (lbs)')
 
     # Display the plot
     plt.show()
