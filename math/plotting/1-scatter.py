@@ -23,7 +23,7 @@ def scatter():
     plt.scatter(x, y, color='magenta')
 
     # Adding title and labels
-    plt.title('Mens Height vs Weight')
+    plt.title("Men's Height vs Weight")
     plt.xlabel('Height(in)')
     plt.ylabel('Weight(lbs)')
 
