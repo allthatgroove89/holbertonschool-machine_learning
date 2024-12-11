@@ -6,8 +6,6 @@ a histogram of student scores for a project.
 
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib
-matplotlib.use('TkAgg')
 
 
 def frequency():
