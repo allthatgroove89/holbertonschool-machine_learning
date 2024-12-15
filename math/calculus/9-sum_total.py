@@ -6,18 +6,13 @@ This module provides a function to calculate the sum of squares from 1 to n.
 
 
 def summation_i_squared(n):
-    """
-    Calculate the sum of squares from 1 to n using the formula:
-    Sum = n(n + 1)(2n + 1) / 6
+    """This function calculates the sum of the squares"""
+    # Step 1: Validate the input
+    if not isinstance(n, int) or n <= 0:
+        return None  # Return None if n is not a valid number
 
-    Parameters:
-    n (int): The stopping condition
+    # Step 2: Apply the formula to calculate the sum of squares
+    sum_squares = (n * (n + 1) * (2 * n + 1)) // 6
 
-    Returns:
-    int: The integer value of the sum, or None if n is invalid
-    """
-    if not isinstance(n, int) or n < 1:
-        return None  # Return None for invalid inputs
-
-    # Apply the formula
-    return (n * (n + 1) * (2 * n + 1)) // 6
+    # Step 3: Return the result
+    return sum_squares
