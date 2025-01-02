@@ -7,28 +7,7 @@ import numpy as np
 
 
 class Node:
-    """
-    A class used to represent a Node in a decision tree.
-
-    Attributes
-    ----------
-    feature : int
-        The feature index used for splitting the node.
-    threshold : float
-        The threshold value used for splitting the node.
-    left_child : Node
-        The left child node.
-    right_child : Node
-        The right child node.
-    is_leaf : bool
-        Indicates if the node is a leaf node.
-    is_root : bool
-        Indicates if the node is the root node.
-    sub_population : list
-        The subset of data points that reach this node.
-    depth : int
-        The depth of the node in the tree.
-    """
+    """A class representing a node in a decision tree."""
     def __init__(self, feature=None, threshold=None, left_child=None,
                  right_child=None, is_root=False, depth=0):
         self.feature = feature
