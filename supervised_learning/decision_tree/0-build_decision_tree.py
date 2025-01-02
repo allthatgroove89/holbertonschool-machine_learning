@@ -41,6 +41,11 @@ class Node:
         self.depth = depth
 
     def max_depth_below(self):
+        """Calculate the maximum depth of the tree below this node.
+
+        Returns:
+            The maximum depth of the tree below this node.
+        """
         # If the node is a leaf, return its depth
         if self.is_leaf:
             return self.depth
