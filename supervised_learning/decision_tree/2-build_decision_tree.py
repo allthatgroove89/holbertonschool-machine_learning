@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-
-#!/usr/bin/env python3
 """Module for the Decision_Tree class."""
 import numpy as np
 
@@ -122,6 +120,7 @@ class Node:
         new_text += "\n" if len(lines) > 1 else ""
         return new_text
 
+
 class Leaf(Node):
     """A class representing a leaf node in a decision tree."""
 
@@ -164,6 +163,7 @@ class Leaf(Node):
         Method that returns the string representation of the current node
         """
         return (f"-> leaf [value={self.value}]")
+
 
 class Decision_Tree():
     """A class representing a decision tree."""
