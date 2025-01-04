@@ -180,6 +180,11 @@ class Leaf(Node):
         return (f"-> leaf [value={self.value}]")
 
     def get_leaves_below(self):
+        """Get all leaf nodes below this leaf (which is just this leaf).
+
+        Returns:
+            list: A list containing this leaf.
+        """
         return [self]
 
 
