@@ -127,7 +127,7 @@ class Node:
             list: A list of leaf nodes below this node.
         """
         if self.is_leaf:
-            return[self]
+            return [self]
         leaves = []
         if self.left_child:
             leaves.extend(self.left_child.get_leaves_below())
