@@ -26,6 +26,8 @@ class Node:
         self.is_root = is_root
         self.sub_population = None
         self.depth = depth
+        self.lower = {}
+        self.upper = {}
 
     def max_depth_below(self):
         """Calculate the maximum depth of the tree below this node.
@@ -136,23 +138,25 @@ class Node:
         return leaves
 
     def update_bounds_below(self):
+        """Update the bounds for the entire tree."""
         if self.is_root:
             self.upper = {0: np.inf}
-            self.lower = {0: -1*np.inf}
+            self.lower = {0: -np.inf}
 
         for child in [self.left_child, self.right_child]:
-            if child:
+            if child is not None:
                 child.lower = self.lower.copy()
                 child.upper = self.upper.copy()
-                feature = self.feature
-                threshold = self.threshold
                 if child == self.left_child:
-                    child.upper[feature] = threshold
+                    child.lower[self.feature] = max(
+                        child.lower.get(self.feature, -np.inf), self.threshold)
                 else:
-                    child.lower[feature] = threshold
+                    child.upper[self.feature] = min(
+                        child.upper.get(self.feature, np.inf), self.threshold)
 
         for child in [self.left_child, self.right_child]:
-            child.update_bounds_below()
+            if child is not None:
+                child.update_bounds_below()
 
 
 class Leaf(Node):
@@ -207,6 +211,7 @@ class Leaf(Node):
         return [self]
 
     def update_bounds_below(self):
+        """Update the bounds for the entire tree."""
         pass
 
 
@@ -271,4 +276,5 @@ class Decision_Tree():
         return self.root.get_leaves_below() if self.root else []
 
     def update_bounds(self):
+        """Update the bounds for the entire tree."""
         self.root.update_bounds_below()
